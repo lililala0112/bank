@@ -1476,11 +1476,10 @@ small {
 }
 
 .hamburger {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  position: fixed;
+  top: 19px;
   right: 3%;
-  z-index: 10;
+  z-index: 101;
 }
 
 @media only screen and (min-width : 1024px) {
@@ -3276,6 +3275,7 @@ header {
   position: relative;
   height: 70px;
   background-color: #fff;
+  border: solid 1px red;
 }
 
 nav {
@@ -3701,7 +3701,8 @@ nav ul li:first-child a::after, #mobile-nav ul li:first-child a::after {
 
 .walking-area {
   position: absolute;
-  width: 100vw;
+  left: 0;
+  right: 0;
   height: 30rem;
   z-index: 2;
   transform: translateY(-20%);
@@ -3748,7 +3749,7 @@ nav ul li:first-child a::after, #mobile-nav ul li:first-child a::after {
 }
 
 body .walking-area {
-  left: 0;
+  left: 5%;
   top: 40%;
 }
 
@@ -3779,7 +3780,7 @@ body .walking-area {
 
 #index .walking-area {
   left: 0;
-  top: 40%;
+  top: 70%;
 }
 
 @media only screen and (min-width : 481px) {
@@ -3787,7 +3788,7 @@ body .walking-area {
     background-image: url("../images/bg-medium.svg");
   }
   #index .walking-area {
-    top: 40%;
+    top: 80%;
   }
 }
 
@@ -3796,7 +3797,7 @@ body .walking-area {
     background-image: url("../images/bg-medium.svg");
   }
   #index .walking-area {
-    top: 40%;
+    top: 80%;
   }
 }
 
@@ -3808,8 +3809,8 @@ body .walking-area {
   #index .walking-area {
     width: 1px;
     top: initial;
-    top: 50%;
-    left: 40%;
+    top: 80%;
+    left: 50%;
     transform: translateY(-20%);
   }
   #index .title {
@@ -3846,6 +3847,12 @@ body .walking-area {
 #step .container .wrapper {
   position: absolute;
   height: 100vh;
+}
+
+#step .walking_doll {
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -50%);
 }
 
 #step h3 {
@@ -3972,7 +3979,7 @@ body .walking-area {
     background: url("../images/hide_doll.svg") no-repeat center top;
   }
   #step .walking-area {
-    top: 46%;
+    top: 56%;
   }
   #step .title {
     margin: 0 auto 0 auto;

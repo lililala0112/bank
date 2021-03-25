@@ -8,7 +8,7 @@ $('.carousel').slick({
     responsive: [{
             breakpoint: 601,
             settings: {
-                slidesToShow: 3,
+                slidesToShow: 1,
                 slidesToScroll: 1,
                 infinite: true,
                 dots: true
@@ -55,11 +55,11 @@ var nav_height = $('#nav-bar nav').height();
 $(window).scroll(function () {
     if ($(this).scrollTop() >= nav_height) { // If page is scrolled more than 50px
         $('#nav-bar').addClass('navbar-fixed'); // Fade in the arrow
-        $('#nav-bar nav').addClass('slideInDown');
+        $('#nav-bar nav,#hamburger').addClass('slideInDown');
     }
     else {
         $('#nav-bar').removeClass('navbar-fixed'); // Fade in the arrow
-        $('#nav-bar nav').removeClass('slideInDown');
+        $('#nav-bar nav,#hamburger').removeClass('slideInDown');
     }
 });
 // ===== Preloader ====
@@ -94,28 +94,30 @@ function animm(elm) {
 ;
 function R(min, max) { return min + Math.random() * (max - min); }
 ;
-gsap.registerPlugin(MotionPathPlugin);
-gsap.set(".doll", {
-    scale: 2,
-    xPercent: -50,
-    yPercent: -50
-});
-var tl = gsap.timeline({ defaults: {
-        duration: 10,
-        repeat: -5,
-        repeatDelay: 1,
-        ease: "linear"
-    } });
-tl.to(".walking_doll", {
-    motionPath: {
-        path: "#path",
-        align: "#path",
-        start: .75,
-        end: 0
-    }
-});
-tl.to(".doll", {
-    scale: 1
-}, "<");
+if (document.getElementById("path") !== null) {
+    gsap.registerPlugin(MotionPathPlugin);
+    gsap.set(".doll", {
+        scale: 2,
+        xPercent: -50,
+        yPercent: -50
+    });
+    var tl = gsap.timeline({ defaults: {
+            duration: 10,
+            repeat: -5,
+            repeatDelay: 1,
+            ease: "linear"
+        } });
+    tl.to(".walking_doll", {
+        motionPath: {
+            path: "#path",
+            align: "#path",
+            start: 0,
+            end: .75
+        }
+    });
+    tl.to(".doll", {
+        scale: 1
+    }, "<");
+}
 
 //# sourceMappingURL=index.js.map
