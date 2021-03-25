@@ -2,7 +2,7 @@ $('.carousel').slick({
     dots: true,
     arrows: true,
     infinite: true,
-    autoplay: false,
+    autoplay: true,
     slidesToShow: 3,
     slidesToScroll: 1,
     responsive: [{
