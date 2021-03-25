@@ -606,7 +606,7 @@ table {
   }
 }
 
-@media only screen and (min-width : 1024px) {
+@media only screen and (min-width : 1025px) {
   .row .col.l1 {
     width: 8.3333333333%;
     margin-left: auto;
@@ -992,7 +992,7 @@ html {
   }
 }
 
-@media only screen and (min-width: 1023px) {
+@media only screen and (min-width: 1024px) {
   html {
     font-size: 14.5px;
   }
@@ -1477,12 +1477,12 @@ small {
 
 .hamburger {
   position: fixed;
-  top: 19px;
+  top: 17px;
   right: 3%;
   z-index: 101;
 }
 
-@media only screen and (min-width : 1024px) {
+@media only screen and (min-width : 1025px) {
   .hamburger {
     display: none !important;
   }
@@ -1495,7 +1495,7 @@ small {
 
 .hamburger.is-active .hamburger-inner::before,
 .hamburger.is-active .hamburger-inner::after {
-  background-color: #666 !important;
+  background-color: #fff !important;
 }
 
 /*
@@ -1732,13 +1732,13 @@ video.responsive-video {
   float: right !important;
 }
 
-@media only screen and (max-width : 1023px) {
+@media only screen and (max-width : 1024px) {
   .hide-on-med-and-down {
     display: none !important;
   }
 }
 
-@media only screen and (min-width : 769px) {
+@media only screen and (min-width : 1025px) {
   .hide-on-med-and-up {
     display: none !important;
   }
@@ -1794,6 +1794,10 @@ video.responsive-video {
 
 .purple-color-bg {
   background-color: #742080;
+}
+
+.red-color-bg {
+  background-color: #E6623B;
 }
 
 @-webkit-keyframes bounceIn {
@@ -3275,7 +3279,6 @@ header {
   position: relative;
   height: 70px;
   background-color: #fff;
-  border: solid 1px red;
 }
 
 nav {
@@ -3298,7 +3301,7 @@ nav a.sidenav-trigger {
   margin: 0 6px;
 }
 
-@media only screen and (min-width : 1024px) {
+@media only screen and (min-width : 1025px) {
   nav a.sidenav-trigger {
     display: none;
   }
@@ -3307,13 +3310,14 @@ nav a.sidenav-trigger {
 nav .brand-logo {
   width: 240px;
   height: 70px;
+  display: block;
   margin-left: 3rem;
   font-size: 0;
   background: url("../images/header-logo.png") no-repeat left center;
   background-size: contain !important;
 }
 
-@media only screen and (max-width : 1023px) {
+@media only screen and (max-width : 1024px) {
   nav .brand-logo {
     position: initial;
   }
@@ -3330,7 +3334,7 @@ nav .brand-logo.center {
   transform: translateX(-50%);
 }
 
-@media only screen and (max-width : 1023px) {
+@media only screen and (max-width : 1024px) {
   nav .brand-logo {
     background: url("../images/logo_small.png") no-repeat left center;
   }
@@ -3372,7 +3376,7 @@ nav ul > li a:hover {
 }
 
 nav ul > li.active > a {
-  color: #C184C5;
+  border: solid 2px #742080;
 }
 
 nav .input-field input:focus, nav .input-field input[type=text]:valid, nav .input-field input[type=password]:valid, nav .input-field input[type=email]:valid, nav .input-field input[type=url]:valid, nav .input-field input[type=date]:valid {
@@ -3410,7 +3414,7 @@ nav .input-field input:focus, nav .input-field input[type=text]:valid, nav .inpu
 }
 
 .navbar-fixed nav ul > li.active > a {
-  color: #C184C5;
+  border: solid 2px #742080;
 }
 
 .navbar-fixed nav .brand-logo {
@@ -3437,7 +3441,11 @@ nav .input-field input:focus, nav .input-field input[type=text]:valid, nav .inpu
   bottom: 0;
   left: 0;
   z-index: 9;
-  background-color: #fff;
+  background-image: url("../images/menu-bg.svg");
+  background-repeat: no-repeat;
+  background-color: #C184C5;
+  background-size: cover;
+  background-position: center bottom;
 }
 
 #mobile-nav .brand-logo {
@@ -3453,7 +3461,7 @@ nav .input-field input:focus, nav .input-field input[type=text]:valid, nav .inpu
 }
 
 #mobile-nav ul {
-  margin-top: 2rem;
+  margin-top: 6rem;
 }
 
 #mobile-nav ul li {
@@ -3471,7 +3479,7 @@ nav .input-field input:focus, nav .input-field input[type=text]:valid, nav .inpu
   padding: 20px 30px;
   border-radius: 10px;
   transition: all .25s;
-  background-color: #FFEF6F;
+  background-color: #fff289;
 }
 
 #mobile-nav ul li a:hover {
@@ -3497,7 +3505,7 @@ body {
   background-size: contain;
 }
 
-@media only screen and (max-width : 1023px) {
+@media only screen and (max-width : 1024px) {
   body {
     background-position: center -50%;
   }
@@ -3508,6 +3516,10 @@ body {
     background-image: url("../images/bg-medium.svg");
     background-position: center top;
   }
+}
+
+.carousel .body {
+  text-align: center;
 }
 
 .title {
@@ -3525,6 +3537,10 @@ body {
   background-size: 70%;
 }
 
+nav ul li, #mobile-nav ul li {
+  position: relative;
+}
+
 nav ul li:first-child a, #mobile-nav ul li:first-child a {
   position: relative;
   color: #fff;
@@ -3536,11 +3552,11 @@ nav ul li:first-child a, #mobile-nav ul li:first-child a {
   padding-left: 6rem;
 }
 
-nav ul li:first-child a::after, #mobile-nav ul li:first-child a::after {
+nav ul li:first-child::after, #mobile-nav ul li:first-child::after {
   content: "";
   position: absolute;
   left: 0;
-  top: 0;
+  top: 10px;
   width: 80px;
   height: 50px;
   background-image: url("../images/ribbon_on_button.svg");
@@ -3590,7 +3606,7 @@ nav ul li:first-child a::after, #mobile-nav ul li:first-child a::after {
   background-size: contain;
 }
 
-@media only screen and (max-width : 1023px) {
+@media only screen and (max-width : 1024px) {
   .ribbon {
     height: 6.3rem;
     line-height: 5.3rem;
@@ -3631,7 +3647,7 @@ nav ul li:first-child a::after, #mobile-nav ul li:first-child a::after {
   background-size: cover;
 }
 
-@media only screen and (max-width : 1023px) {
+@media only screen and (max-width : 1024px) {
   .welcome_cloth {
     top: 13.5rem;
     background-size: 128%;
@@ -3645,7 +3661,7 @@ nav ul li:first-child a::after, #mobile-nav ul li:first-child a::after {
   }
 }
 
-@media only screen and (min-width : 1024px) {
+@media only screen and (min-width : 1025px) {
   .welcome_cloth {
     width: 61.375rem;
     top: 19.2rem;
@@ -3664,7 +3680,7 @@ nav ul li:first-child a::after, #mobile-nav ul li:first-child a::after {
   right: 22.5rem;
 }
 
-@media only screen and (max-width : 1023px) {
+@media only screen and (max-width : 1024px) {
   .direction {
     top: 18rem;
     right: -2rem;
@@ -3703,13 +3719,14 @@ nav ul li:first-child a::after, #mobile-nav ul li:first-child a::after {
   position: absolute;
   left: 0;
   right: 0;
-  height: 30rem;
+  height: 40rem;
   z-index: 2;
   transform: translateY(-20%);
 }
 
 .walking_doll {
   position: absolute;
+  bottom: -5%;
   z-index: 1;
 }
 
@@ -3727,7 +3744,7 @@ nav ul li:first-child a::after, #mobile-nav ul li:first-child a::after {
   transform: translateX(-50%);
 }
 
-@media only screen and (max-width : 1023px) {
+@media only screen and (max-width : 1024px) {
   .anim_path {
     top: 30%;
     left: 18%;
@@ -3748,26 +3765,15 @@ nav ul li:first-child a::after, #mobile-nav ul li:first-child a::after {
   }
 }
 
-body .walking-area {
-  left: 5%;
-  top: 40%;
-}
-
 @media only screen and (min-width : 481px) {
   body {
     background-image: url("../images/bg-medium.svg");
-  }
-  body .walking-area {
-    top: 40%;
   }
 }
 
 @media only screen and (min-width : 769px) {
   body {
     background-image: url("../images/bg-medium.svg");
-  }
-  body .walking-area {
-    top: 40%;
   }
 }
 
@@ -3778,17 +3784,9 @@ body .walking-area {
   background-size: contain;
 }
 
-#index .walking-area {
-  left: 0;
-  top: 70%;
-}
-
 @media only screen and (min-width : 481px) {
   #index {
     background-image: url("../images/bg-medium.svg");
-  }
-  #index .walking-area {
-    top: 80%;
   }
 }
 
@@ -3796,20 +3794,30 @@ body .walking-area {
   #index {
     background-image: url("../images/bg-medium.svg");
   }
+  #index .poster_area {
+    margin-top: 32rem;
+  }
   #index .walking-area {
-    top: 80%;
+    height: 58rem;
+  }
+  #index .direction {
+    top: 33.3rem;
+    right: 0;
+  }
+  #index .doll {
+    width: 16rem;
   }
 }
 
-@media only screen and (min-width : 1024px) {
+@media only screen and (min-width : 1025px) {
   #index {
     background: url("../images/bg.svg") no-repeat center 20% #C184C5;
     background-size: cover;
   }
   #index .walking-area {
     width: 1px;
-    top: initial;
-    top: 80%;
+    height: 40rem;
+    top: 75%;
     left: 50%;
     transform: translateY(-20%);
   }
@@ -3831,6 +3839,10 @@ body .walking-area {
   #index .poster_area .flaps {
     flex: 1.1;
   }
+  #index .direction {
+    top: 47.5rem;
+    right: 22.5rem;
+  }
 }
 
 #step {
@@ -3847,12 +3859,6 @@ body .walking-area {
 #step .container .wrapper {
   position: absolute;
   height: 100vh;
-}
-
-#step .walking_doll {
-  top: 50%;
-  left: 20%;
-  transform: translate(-50%, -50%);
 }
 
 #step h3 {
@@ -3877,7 +3883,7 @@ body .walking-area {
 
 #step .ribbon {
   height: 6.3rem;
-  line-height: 5.3rem;
+  line-height: 3.3rem;
 }
 
 #step .content {
@@ -3954,7 +3960,15 @@ body .walking-area {
   height: 200px;
 }
 
+#step .step2 .button {
+  width: 100%;
+  margin-right: 0;
+}
+
 @media only screen and (min-width: 769px) {
+  #step {
+    background-position: center -18%;
+  }
   #step .poster_area {
     margin-top: 31rem;
   }
@@ -3962,11 +3976,17 @@ body .walking-area {
     top: 34rem;
     right: 0;
   }
+  #step .walking-area {
+    height: 56rem;
+  }
+  #step .doll {
+    width: 16rem;
+  }
 }
 
 @media only screen and (min-width: 1025px) {
   #step {
-    background: url("../images/bg.svg") no-repeat center top #C184C5;
+    background: url("../images/bg.svg") no-repeat center -5% #C184C5;
     background-size: 100%;
   }
   #step .hide-show-doll {
@@ -3979,10 +3999,16 @@ body .walking-area {
     background: url("../images/hide_doll.svg") no-repeat center top;
   }
   #step .walking-area {
-    top: 56%;
+    width: 1280px;
+    height: 46rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  #step .doll {
+    width: 16rem;
   }
   #step .title {
-    margin: 0 auto 0 auto;
+    margin: 0 auto;
   }
   #step .welcome_cloth {
     width: 70%;
@@ -4009,6 +4035,9 @@ body .walking-area {
   #step .anim_path {
     top: 40%;
   }
+  #step .ribbon {
+    line-height: 5.3rem;
+  }
   #step .step2 .content {
     display: flex;
     flex-direction: row;
@@ -4019,6 +4048,10 @@ body .walking-area {
   }
   #step .step2 .prize-img {
     flex: 1;
+  }
+  #step .step2 .button {
+    width: initial;
+    margin-right: 2rem;
   }
 }
 

@@ -2,7 +2,7 @@ $('.carousel').slick({
     dots: true,
     arrows: true,
     infinite: true,
-    autoplay: true,
+    autoplay: false,
     slidesToShow: 3,
     slidesToScroll: 1,
     responsive: [{
@@ -94,7 +94,8 @@ function animm(elm) {
 ;
 function R(min, max) { return min + Math.random() * (max - min); }
 ;
-if (document.getElementById("path") !== null) {
+var mediaQuery = window.matchMedia('(min-width: 1025px)');
+if (document.getElementById("path") !== null && mediaQuery.matches) {
     gsap.registerPlugin(MotionPathPlugin);
     gsap.set(".doll", {
         scale: 2,
@@ -103,21 +104,29 @@ if (document.getElementById("path") !== null) {
     });
     var tl = gsap.timeline({ defaults: {
             duration: 10,
-            repeat: -5,
-            repeatDelay: 1,
             ease: "linear"
         } });
     tl.to(".walking_doll", {
         motionPath: {
             path: "#path",
             align: "#path",
-            start: 0,
-            end: .75
+            start: .2,
+            end: .5
         }
     });
     tl.to(".doll", {
         scale: 1
     }, "<");
 }
+var pageparam = window.location.pathname.split("/").pop();
+$("nav li>a").each(function (i) {
+    if ($(this).attr('href') == pageparam) {
+        $(this).parent().addClass('active');
+        if ($(this).parent().parent().length > 0) {
+            console.log('check');
+            $(this).parent().parent().css('display', 'block');
+        }
+    }
+});
 
 //# sourceMappingURL=index.js.map
