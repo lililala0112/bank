@@ -1,0 +1,126 @@
+$('.carousel').slick({
+    dots: true,
+    arrows: true,
+    infinite: true,
+    autoplay: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    responsive: [{
+            breakpoint: 601,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+                infinite: true,
+                dots: true
+            }
+        },]
+});
+//wow.js'
+var wow = new WOW({
+    boxClass: 'wow',
+    animateClass: 'animated',
+    offset: 0,
+    mobile: true,
+    live: true // default
+});
+wow.init();
+$(document).on('click', '#hamburger', function () {
+    if ($(this).hasClass('is-active')) {
+        $(this).removeClass('is-active');
+        $('#mobile-nav').fadeOut();
+        return;
+    }
+    $(this).addClass('is-active');
+    $('#mobile-nav').fadeIn();
+    console.log('click');
+});
+$(document).on('click', '#mobile-nav a', function () {
+    $('#hamburger').trigger('click');
+});
+$(document).on('click', 'a[href^="#"]', function (event) {
+    event.preventDefault();
+    var scrollOffest = '';
+    if (window.matchMedia("(max-width: 1024px)").matches) {
+        scrollOffest = $($.attr(this, 'href')).offset().top;
+    }
+    else {
+        scrollOffest = $($.attr(this, 'href')).offset().top - $('nav').height();
+    }
+    $('html, body').animate({
+        scrollTop: scrollOffest
+    }, 500);
+});
+// ===== Scroll to Fixed ====
+var nav_height = $('#nav-bar nav').height();
+$(window).scroll(function () {
+    if ($(this).scrollTop() >= nav_height) { // If page is scrolled more than 50px
+        $('#nav-bar').addClass('navbar-fixed'); // Fade in the arrow
+        $('#nav-bar nav').addClass('slideInDown');
+    }
+    else {
+        $('#nav-bar').removeClass('navbar-fixed'); // Fade in the arrow
+        $('#nav-bar nav').removeClass('slideInDown');
+    }
+});
+// ===== Preloader ====
+$('#preloader').delay(3000).fadeOut();
+// ===== Scroll to specific offset ==== 
+$(window).scroll(function () {
+    if ($(this).scrollTop() >= 50) { // If page is scrolled more than 50px
+        $('.pagetop').fadeIn(200); // Fade in the arrow
+    }
+    else {
+        $('.pagetop').fadeOut(200); // Else fade out the arrow
+    }
+});
+// ===== snow slice ====
+var tl = gsap.timeline();
+var falling = true;
+gsap.set("#snow_piece", { perspective: 500 });
+gsap.set("img", { xPercent: "-50%", yPercent: "-50%" });
+var total = 60;
+var snow_piece = document.getElementById("snow_piece"), w = 1280, h = window.innerHeight;
+for (i = 0; i < total; i++) {
+    var Div = document.createElement('div');
+    gsap.set(Div, { attr: { "class": 'snow' }, x: R(0, w), y: R(-200, -150), z: R(-200, 200) });
+    snow_piece.appendChild(Div);
+    animm(Div);
+}
+function animm(elm) {
+    gsap.to(elm, R(14, 22), { y: h + 100, ease: Linear.easeNone, repeat: -1, delay: -15, backgroundColor: '#E6623B' });
+    gsap.to(elm, R(4, 8), { x: '+=100', rotationZ: R(0, 180), repeat: -1, yoyo: true, ease: Sine.easeInOut, backgroundColor: '#EF8EAD' });
+    gsap.to(elm, R(2, 8), { rotationX: R(0, 360), rotationY: R(0, 360), repeat: -1, yoyo: true, ease: Sine.easeInOut, delay: -5, backgroundColor: '#71a0b4' });
+}
+;
+function R(min, max) { return min + Math.random() * (max - min); }
+;
+//register the plugin (just once)
+gsap.registerPlugin(MotionPathPlugin);
+var walkingAreaHeight = $('.wrapper').height();
+gsap.set(".walking-area#walkArea", {
+    height: walkingAreaHeight
+});
+gsap.set(".doll", {
+    scale: 2,
+    xPercent: -50,
+    yPercent: -50
+});
+var tl = gsap.timeline({ defaults: {
+        duration: 10,
+        repeat: -5,
+        repeatDelay: 1,
+        ease: "linear"
+    } });
+tl.to(".walking_doll", {
+    motionPath: {
+        path: "#path",
+        align: "#path",
+        start: .75,
+        end: 0
+    }
+});
+tl.to(".doll", {
+    scale: 1
+}, "<");
+
+//# sourceMappingURL=main.js.map
