@@ -3507,7 +3507,7 @@ body {
   overflow-x: hidden;
   background-image: url("../images/bg-small.svg");
   background-repeat: no-repeat;
-  background-color: #C184C5;
+  background-color: #FFE983;
   background-size: contain;
 }
 
@@ -3522,6 +3522,10 @@ body {
     background-image: url("../images/bg-medium.svg");
     background-position: center top;
   }
+}
+
+.carousel {
+  display: flex;
 }
 
 .carousel .body {
@@ -3704,9 +3708,9 @@ nav ul li:first-child::after, #mobile-nav ul li:first-child::after {
 
 .direction .glass_doll {
   position: absolute;
-  left: 15px;
-  bottom: 1px;
-  width: 94px;
+  left: -36px;
+  bottom: -16px;
+  width: 138px;
 }
 
 .direction .pointer {
@@ -3813,20 +3817,34 @@ nav ul li:first-child::after, #mobile-nav ul li:first-child::after {
 #index {
   background-image: url("../images/bg-small.svg");
   background-repeat: no-repeat;
-  background-color: #C184C5;
+  background-color: #FFE983;
+  background-size: contain;
+  background-image: url("../images/bg-small.svg");
+  background-repeat: no-repeat;
+  background-color: #FFE983;
   background-size: contain;
 }
 
 @media only screen and (min-width : 481px) {
   #index {
     background-image: url("../images/bg-medium.svg");
+    background-position: center 50%;
+    background-size: contain;
+  }
+  #index h3 {
+    font-size: 2.6rem;
   }
 }
 
 @media only screen and (min-width : 769px) {
   #index {
     background-image: url("../images/bg-medium.svg");
+    background-position: center -20%;
+    background-size: 1080px;
   }
+}
+
+@media only screen and (min-width : 769px) {
   #index .poster_area {
     margin-top: 32rem;
   }
@@ -3849,7 +3867,7 @@ nav ul li:first-child::after, #mobile-nav ul li:first-child::after {
   }
   #index .walking-area {
     width: 1px;
-    height: calc(100vh - 400px);
+    height: 350px;
     top: 75%;
     left: 50%;
     transform: translateY(-20%);
@@ -3881,7 +3899,7 @@ nav ul li:first-child::after, #mobile-nav ul li:first-child::after {
 #step {
   background-image: url("../images/bg-small.svg");
   background-repeat: no-repeat;
-  background-color: #C184C5;
+  background-color: #FFE983;
   background-size: contain;
 }
 
@@ -3982,9 +4000,19 @@ nav ul li:first-child::after, #mobile-nav ul li:first-child::after {
 @media only screen and (min-width : 481px) {
   #step {
     background-image: url("../images/bg-medium.svg");
+    background-position: center 30%;
+    background-size: contain;
   }
   #step h3 {
     font-size: 2.6rem;
+  }
+}
+
+@media only screen and (min-width : 769px) {
+  #step {
+    background-image: url("../images/bg-medium.svg");
+    background-position: center -20%;
+    background-size: 1080px;
   }
 }
 
@@ -4006,9 +4034,6 @@ nav ul li:first-child::after, #mobile-nav ul li:first-child::after {
 }
 
 @media only screen and (min-width: 769px) {
-  #step {
-    background-position: center -18%;
-  }
   #step .poster_area {
     margin-top: 31rem;
   }
@@ -4026,8 +4051,8 @@ nav ul li:first-child::after, #mobile-nav ul li:first-child::after {
 
 @media only screen and (min-width: 1025px) {
   #step {
-    background: url("../images/bg.svg") no-repeat center -5% #C184C5;
-    background-size: 100%;
+    background: url("../images/bg-medium-contain.svg") no-repeat center top #C184C5;
+    background-size: 1960px;
   }
   #step .hide-show-doll {
     position: absolute;
