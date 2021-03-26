@@ -27,14 +27,13 @@ wow.init();
 $(document).on('click', '#hamburger', function () {
     if ($(this).hasClass('is-active')) {
         $(this).removeClass('is-active');
-        $('#mobile-nav').fadeOut();
+        $('#mobile-nav,#mask').fadeOut();
         return;
     }
     $(this).addClass('is-active');
-    $('#mobile-nav').fadeIn();
-    console.log('click');
+    $('#mobile-nav,#mask').fadeIn();
 });
-$(document).on('click', '#mobile-nav a', function () {
+$(document).on('click', '#mobile-nav a,#mask', function () {
     $('#hamburger').trigger('click');
 });
 $(document).on('click', 'a[href^="#"]', function (event) {

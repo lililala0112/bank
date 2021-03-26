@@ -1490,12 +1490,11 @@ small {
 
 .hamburger.is-active {
   position: fixed;
-  top: 37px;
 }
 
 .hamburger.is-active .hamburger-inner::before,
 .hamburger.is-active .hamburger-inner::after {
-  background-color: #fff !important;
+  background-color: #C184C5 !important;
 }
 
 /*
@@ -3432,13 +3431,24 @@ nav .input-field input:focus, nav .input-field input[type=text]:valid, nav .inpu
   }
 }
 
+#mask {
+  display: none;
+  position: fixed;
+  top: 200px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 8;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
 #mobile-nav {
   display: none;
   position: fixed;
   padding: 3rem;
+  margin-top: 70px;
   top: 0;
   right: 0;
-  bottom: 0;
   left: 0;
   z-index: 9;
   background-image: url("../images/menu-bg.svg");
@@ -3458,10 +3468,6 @@ nav .input-field input:focus, nav .input-field input[type=text]:valid, nav .inpu
   line-height: 160%;
   text-align: center;
   font-size: 1.75rem;
-}
-
-#mobile-nav ul {
-  margin-top: 6rem;
 }
 
 #mobile-nav ul li {
@@ -3520,6 +3526,13 @@ body {
 
 .carousel .body {
   text-align: center;
+}
+
+.download_link {
+  display: block;
+  color: black;
+  text-decoration: underline;
+  padding: .5rem 0;
 }
 
 .title {
@@ -3602,7 +3615,8 @@ nav ul li:first-child::after, #mobile-nav ul li:first-child::after {
   width: 100%;
   height: 4.375rem;
   line-height: 3.125rem;
-  background: url("../images/ribbon.svg") no-repeat center top;
+  background-repeat: no-repeat;
+  background-position: center top;
   background-size: contain;
 }
 
@@ -3611,6 +3625,14 @@ nav ul li:first-child::after, #mobile-nav ul li:first-child::after {
     height: 6.3rem;
     line-height: 5.3rem;
   }
+}
+
+.ribbon_1 {
+  background-image: url("../images/ribbon_1.png");
+}
+
+.ribbon_2 {
+  background-image: url("../images/ribbon_2.png");
 }
 
 .mark_bg {
@@ -3680,6 +3702,17 @@ nav ul li:first-child::after, #mobile-nav ul li:first-child::after {
   right: 22.5rem;
 }
 
+.direction .glass_doll {
+  position: absolute;
+  left: 15px;
+  bottom: 1px;
+  width: 94px;
+}
+
+.direction .pointer {
+  cursor: pointer;
+}
+
 @media only screen and (max-width : 1024px) {
   .direction {
     top: 18rem;
@@ -3720,7 +3753,7 @@ nav ul li:first-child::after, #mobile-nav ul li:first-child::after {
   left: 0;
   right: 0;
   height: 40rem;
-  z-index: 2;
+  z-index: 0;
   transform: translateY(-20%);
 }
 
@@ -3861,6 +3894,18 @@ nav ul li:first-child::after, #mobile-nav ul li:first-child::after {
   height: 100vh;
 }
 
+#step .button-area .button {
+  width: initial;
+  margin-right: 2rem;
+}
+
+@media only screen and (max-width : 1024px) {
+  #step .button-area .button {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
 #step h3 {
   font-size: 2rem;
 }
@@ -3960,11 +4005,6 @@ nav ul li:first-child::after, #mobile-nav ul li:first-child::after {
   height: 200px;
 }
 
-#step .step2 .button {
-  width: 100%;
-  margin-right: 0;
-}
-
 @media only screen and (min-width: 769px) {
   #step {
     background-position: center -18%;
@@ -4048,10 +4088,6 @@ nav ul li:first-child::after, #mobile-nav ul li:first-child::after {
   }
   #step .step2 .prize-img {
     flex: 1;
-  }
-  #step .step2 .button {
-    width: initial;
-    margin-right: 2rem;
   }
 }
 
