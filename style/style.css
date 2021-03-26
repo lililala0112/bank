@@ -3816,7 +3816,7 @@ nav ul li:first-child::after, #mobile-nav ul li:first-child::after {
   }
   #index .walking-area {
     width: 1px;
-    height: 40rem;
+    height: calc(100vh - 400px);
     top: 75%;
     left: 50%;
     transform: translateY(-20%);

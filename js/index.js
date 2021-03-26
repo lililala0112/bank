@@ -98,7 +98,7 @@ var mediaQuery = window.matchMedia('(min-width: 1025px)');
 if (document.getElementById("path") !== null && mediaQuery.matches) {
     gsap.registerPlugin(MotionPathPlugin);
     gsap.set(".doll", {
-        scale: 2,
+        scale: 1.6,
         xPercent: -50,
         yPercent: -50
     });
