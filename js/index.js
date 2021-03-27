@@ -4,8 +4,9 @@ $('.carousel').slick({
     infinite: true,
     autoplay: true,
     slidesToShow: 3,
+    slidesToScroll: 1,
     responsive: [{
-            breakpoint: 768,
+            breakpoint: 601,
             settings: {
                 slidesToShow: 1,
                 slidesToScroll: 1,
@@ -112,8 +113,8 @@ if (document.getElementById("path") !== null && mediaQuery.matches) {
         motionPath: {
             path: "#path",
             align: "#path",
-            start: .2,
-            end: .4
+            start: .1,
+            end: .8
         }
     });
     tl.to(".doll", {

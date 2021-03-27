@@ -3505,27 +3505,47 @@ nav .input-field input:focus, nav .input-field input[type=text]:valid, nav .inpu
 
 body {
   overflow-x: hidden;
+  background-color: #C184C5;
+}
+
+body .top_fill_color {
+  position: absolute;
+  width: 100vw;
+  height: 18.75rem;
+  background-color: #FFE983;
+}
+
+#index, #step {
+  position: relative;
   background-image: url("../images/bg-small.svg");
   background-repeat: no-repeat;
-  background-color: #FFE983;
+  background-color: #C184C5;
   background-size: contain;
 }
 
 @media only screen and (max-width : 1024px) {
-  body {
+  #index, #step {
     background-position: center -50%;
   }
 }
 
 @media only screen and (max-width : 768px) {
-  body {
+  #index, #step {
     background-image: url("../images/bg-medium.svg");
     background-position: center top;
   }
 }
 
-.carousel {
-  display: flex;
+@media only screen and (min-width : 481px) {
+  #index, #step {
+    background-image: url("../images/bg-medium.svg");
+  }
+}
+
+@media only screen and (min-width : 769px) {
+  #index, #step {
+    background-image: url("../images/bg-medium.svg");
+  }
 }
 
 .carousel .body {
@@ -3708,9 +3728,10 @@ nav ul li:first-child::after, #mobile-nav ul li:first-child::after {
 
 .direction .glass_doll {
   position: absolute;
-  left: -36px;
-  bottom: -16px;
-  width: 138px;
+  left: -47px;
+  bottom: -3px;
+  width: 9.5rem;
+  background: url("../images/glass_doll_shadow.svg") no-repeat center bottom;
 }
 
 .direction .pointer {
@@ -3754,11 +3775,16 @@ nav ul li:first-child::after, #mobile-nav ul li:first-child::after {
 
 .walking-area {
   position: absolute;
-  left: 0;
-  right: 0;
-  height: 40rem;
-  z-index: 0;
-  transform: translateY(-20%);
+}
+
+@media only screen and (max-width : 1280px) {
+  .walking-area {
+    left: 0;
+    right: 0;
+    height: 40rem;
+    z-index: 0;
+    transform: translateY(-20%);
+  }
 }
 
 .walking_doll {
@@ -3772,56 +3798,17 @@ nav ul li:first-child::after, #mobile-nav ul li:first-child::after {
 }
 
 .anim_path {
-  position: absolute;
-  max-width: 41.25rem;
-  height: 26.6875rem;
-  left: 0;
-  bottom: initial;
-  top: 40%;
-  transform: translateX(-50%);
-}
-
-@media only screen and (max-width : 1024px) {
-  .anim_path {
-    top: 30%;
-    left: 18%;
-  }
-}
-
-@media only screen and (max-width : 768px) {
-  .anim_path {
-    top: 20%;
-    left: 10%;
-  }
-}
-
-@media only screen and (max-width : 480px) {
-  .anim_path {
-    top: 15%;
-    left: 0;
-  }
-}
-
-@media only screen and (min-width : 481px) {
-  body {
-    background-image: url("../images/bg-medium.svg");
-  }
-}
-
-@media only screen and (min-width : 769px) {
-  body {
-    background-image: url("../images/bg-medium.svg");
-  }
+  display: none;
 }
 
 #index {
   background-image: url("../images/bg-small.svg");
   background-repeat: no-repeat;
-  background-color: #FFE983;
+  background-color: #C184C5;
   background-size: contain;
   background-image: url("../images/bg-small.svg");
   background-repeat: no-repeat;
-  background-color: #FFE983;
+  background-color: #C184C5;
   background-size: contain;
 }
 
@@ -3866,19 +3853,22 @@ nav ul li:first-child::after, #mobile-nav ul li:first-child::after {
     background-size: cover;
   }
   #index .walking-area {
-    width: 1px;
-    height: 350px;
-    top: 75%;
+    width: 480px;
+    height: 100px;
+    top: 50%;
     left: 50%;
-    transform: translateY(-20%);
+    transform: translate(-50%, -50%);
   }
   #index .title {
     margin: 0 auto 0 auto;
   }
   #index .anim_path {
-    top: initial;
-    bottom: 5%;
-    left: 40%;
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 300px;
+    height: 100px;
   }
   #index .poster_area {
     flex-direction: row;
@@ -3899,7 +3889,7 @@ nav ul li:first-child::after, #mobile-nav ul li:first-child::after {
 #step {
   background-image: url("../images/bg-small.svg");
   background-repeat: no-repeat;
-  background-color: #FFE983;
+  background-color: #C184C5;
   background-size: contain;
 }
 
@@ -3969,7 +3959,6 @@ nav ul li:first-child::after, #mobile-nav ul li:first-child::after {
 }
 
 #step .app {
-  display: flex;
   flex-direction: column;
 }
 
@@ -4051,7 +4040,7 @@ nav ul li:first-child::after, #mobile-nav ul li:first-child::after {
 
 @media only screen and (min-width: 1025px) {
   #step {
-    background: url("../images/bg-medium-contain.svg") no-repeat center top #C184C5;
+    background: url("../images/bg-medium-contain.svg") no-repeat center top;
     background-size: 1960px;
   }
   #step .hide-show-doll {
@@ -4081,11 +4070,6 @@ nav ul li:first-child::after, #mobile-nav ul li:first-child::after {
   #step .poster_area {
     margin-top: 31rem;
   }
-  #step .anim_path {
-    top: initial;
-    bottom: -5%;
-    left: 41%;
-  }
   #step .direction {
     position: absolute;
     top: 32.5rem;
@@ -4096,9 +4080,6 @@ nav ul li:first-child::after, #mobile-nav ul li:first-child::after {
   }
   #step .app {
     flex-direction: row;
-  }
-  #step .anim_path {
-    top: 40%;
   }
   #step .ribbon {
     line-height: 5.3rem;
