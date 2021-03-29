@@ -3805,11 +3805,17 @@ nav ul li:first-child::after, #mobile-nav ul li:first-child::after {
   display: none;
 }
 
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .walking-area#walkArea {
+    display: block;
+  }
+}
+
 @media only screen and (-ms-high-contrast: active) and (min-width : 1025px), only screen and (-ms-high-contrast: none) and (min-width : 1025px) {
   .forIEwlalking {
     display: block;
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
   }
   .walking-area#walkArea {
