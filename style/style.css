@@ -3801,6 +3801,21 @@ nav ul li:first-child::after, #mobile-nav ul li:first-child::after {
   display: none;
 }
 
+.forIEwlalking {
+  display: none;
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .forIEwlalking {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+  .walking-area#walkArea {
+    display: none;
+  }
+}
+
 #index {
   background-image: url("../images/bg-small.svg");
   background-repeat: no-repeat;
